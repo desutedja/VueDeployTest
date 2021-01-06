@@ -31,25 +31,72 @@
       <footer class="text-center" style="background: gray;">
         <div class="footer-above">
           <div class="container">
-            <div class="row">
-              <div class="footer-col col-md-4">
-                <h3>Location</h3>
-                <p>Indonesia<br>Jakarta</p>
+            <div class="row" style="display:block ruby">
+
+              <div class="col-md-2 col-sm-3 col-xs-3 margin_top">
+                <div class="row alert alert-info" style="margin:0;padding:5px;">
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="">
+                      <div class="glyphicon-ring glyphicon-teal">
+                        <span class="fa fa-facebook glyphicon-bordered"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6 text-center" style="padding:0;">
+                    <p style="padding-top: 10px;"> Here Some Text </p>
+                  </div>
+                </div>
               </div>
-              <div class="footer-col col-md-4">
-                <h3>Around the World</h3>
-                <ul class="list-inline">
-                  <!-- some social networks -->
-                </ul>
+
+              <div class="col-md-2 col-sm-3 col-xs-3 margin_top">
+                <div class="row alert alert-info" style="margin:0;padding:5px;">
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="">
+                      <div class="glyphicon-ring glyphicon-teal">
+                        <span class="fa fa-twitter glyphicon-bordered"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6 text-center" style="padding:0;">
+                    <p style="padding-top: 10px;"> Here Some Text </p>
+                  </div>
+                </div>
               </div>
-              <div class="footer-col col-md-4">
-                <h3>About Us</h3>
-                <p>its all about us</p>
+
+              <div class="col-md-2 col-sm-3 col-xs-3 margin_top">
+                <div class="row alert alert-info" style="margin:0;padding:5px;">
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="">
+                      <div class="glyphicon-ring glyphicon-teal">
+                        <span class="fa fa-google glyphicon-bordered"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6 text-center" style="padding:0;">
+                    <p style="padding-top: 10px;"> Here Some Text </p>
+                  </div>
+                </div>
               </div>
+
+              <div class="col-md-2 col-sm-3 col-xs-3 margin_top">
+                <div class="row alert alert-info" style="margin:0;padding:5px;">
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="">
+                      <div class="glyphicon-ring glyphicon-teal">
+                        <span class="fa fa-youtube glyphicon-bordered"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6 text-center" style="padding:0;">
+                    <p style="padding-top: 10px;"> Here Some Text </p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
-        <div class="footer-below">
+        <!--div class="footer-below">
           <div class="container">
             <div class="row">
               <div class="col-lg-12">
@@ -57,7 +104,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div-->
       </footer>
     </main>
   </div>
@@ -70,6 +117,43 @@ export default {
 </script>
 
 <style>
+@import './assets/css/font-awesome.min.css';
+
+.container{
+  font-size:10px;
+}
+
+.glyphicon-ring {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 4px solid white;
+  color: white;
+  display: inline-table;
+  text-align: center;
+}
+
+.glyphicon-ring .glyphicon-bordered {
+  font-size: 15px;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.glyphicon-teal {
+  background: teal;
+  color: orange;
+}
+
+.margin_top{
+	margin-top: 0px;
+}
+
+@media (max-width: 768px){
+	.margin_top{
+		margin-top: 10px !important;
+	}
+}
+
 body {
   margin: 0;
 }

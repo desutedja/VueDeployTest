@@ -99,6 +99,10 @@ export default {
   width:70%;
 }
 
+.promo .card{
+  margin: 10px 0 10px;
+}
+
 h1, h2 {
   font-weight: normal;
 }
@@ -115,5 +119,12 @@ li {
 
 a {
   color: #35495E;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .promo{
+    width:100%;
+  }
 }
 </style>
