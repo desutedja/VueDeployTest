@@ -100,7 +100,7 @@ export default {
 }
 
 .promo .card{
-  margin: 10px 0 10px;
+  margin: 10px 0 100px;
 }
 
 h1, h2 {
