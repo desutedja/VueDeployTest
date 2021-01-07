@@ -124,7 +124,7 @@ export default {
 
 .sidebar-social li {
   text-align: center;
-  width: 19%;
+  width: 18%;
   margin: 0 0 3px !important;
   background-color: #fff;
   border: 1px solid #eee;
