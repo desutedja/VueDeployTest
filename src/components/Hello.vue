@@ -48,7 +48,7 @@
       <div class="promo">
         <b-card no-body>
           <b-tabs card>
-            <b-tab title="DEMO" active>
+            <b-tab title="DEMO" class="tabs" active>
               <div class="container">
                 <div class="row">
                   <div class="f-row">
@@ -113,7 +113,7 @@
                 </div>
               </div>
             </b-tab>
-            <b-tab title="REAL">
+            <b-tab title="REAL" class="tabs">
               <div class="container">
                 <div class="row">
                   <div class="f-row">
@@ -156,7 +156,7 @@
                       : 1,250.75
                     </div>
                     <div class="thirty5">
-                      <button class="btn btn-primary btn-sm btnsmall">DEPO</button>
+                      <button class="btn btn-primary btn-sm btnsmall">Depo</button>
                       <button class="btn btn-primary btn-sm btnsmall">WD</button>
                     </div>
                   </div>
@@ -176,7 +176,7 @@
                     <div class="thirty">
                       <small>IOS</small>
                       <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
-                    </div>
+                    </div>padding: 3px;
                   </div>
                 </div>
               </div>
@@ -213,6 +213,10 @@ export default {
 small {
    display: block;
    text-align: center;
+}
+
+.tabs > .container > .row > .f-row {
+  padding: 3px;
 }
 
 .click-to-copy .Label {
