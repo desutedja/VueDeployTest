@@ -262,7 +262,7 @@ small {
 }
 .btnsmall{
   border-radius: 5px;
-  width: 45px;
+  width: 50px;
   padding: 0px;
   font-size: small !important;
 }
