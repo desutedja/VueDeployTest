@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <!--nav class="navbar navbar-expand-md navbar-dark bg-dark">
           <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
               <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
@@ -22,7 +22,31 @@
                   </li>
               </ul>
           </div>
-      </nav>
+      </nav-->
+      <b-navbar toggleable="lg" type="dark" variant="info">
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item href="#">Menu 1</b-nav-item>
+            <b-nav-item href="#">Menu 2</b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+
+        <div class="mx-auto order-0">
+            <b-navbar-brand href="#" class="mx-auto order-0" >Logo</b-navbar-brand>
+        </div>
+        <!-- Right aligned nav items -->
+        <b-navbar-nav class="ml-auto">
+            <b-nav-item-dropdown right>
+              <!-- Using 'button-content' slot -->
+              <template #button-content>
+                <em>User</em>
+              </template>
+              <b-dropdown-item href="#">Profile</b-dropdown-item>
+              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            </b-nav-item-dropdown>
+          </b-navbar-nav>
+      </b-navbar>
     </div>
     <main>
       <marquee><p style="font-family: Impact; font-size: 18pt">Running Text! Teks Berjalan! Running Text! Teks Berjalan! Running Text! Teks Berjalan!</p></marquee>

@@ -22,15 +22,6 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  methods: {
-    doCopy: function (e) {
-      let selectEl = $(e.target).parents('.click-to-copy').find('.click-to-copy-text')[0]
-
-      selectEl.select()
-      document.execCommand('copy')
-      alert()
-    }
-  },
   router,
   template: '<App/>',
   components: { App }

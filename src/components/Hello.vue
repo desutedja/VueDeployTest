@@ -52,53 +52,53 @@
               <div class="container">
                 <div class="row">
                   <div class="f-row">
-                    <div class="thirty pull-left">
+                    <div class="twenty5 pull-left">
                       User ID
                     </div>
-                    <div class="fifty pull-left click-to-copy">
+                    <div class="forty pull-left click-to-copy">
                       <span class="click-to-copy-text" :value="link1">: 123456789</span>
-                      <span data-label="Copied" class="Label" @click="doCopy">Copy</span>
                     </div>
-                    <div class="twenty">
-                      <button class="btn btn-primary btn-sm btnsmall">Edit</button>
+                    <div class="thirty">
+                      <button class="btn btn-primary btn-sm btnsmall">Copy</button>
+                      <button class="btn btn-primary btn-sm btnsmall">Add</button>
                     </div>
                   </div>
                   <div class="f-row">
-                    <div class="thirty pull-left">
+                    <div class="twenty5 pull-left">
                       Password
                     </div>
-                    <div class="fifty pull-left click-to-copy">
+                    <div class="forty pull-left click-to-copy">
                       <span class="click-to-copy-text" :value="link2">: 123456789</span>
-                      <span data-label="Copied" class="Label">Copy</span>
                     </div>
-                    <div class="twenty">
+                    <div class="thirty">
+                      <button class="btn btn-primary btn-sm btnsmall">Copy</button>
                       <button class="btn btn-primary btn-sm btnsmall">Edit</button>
                     </div>
                   </div>
                   <div class="f-row">
-                    <div class="thirty pull-left">
+                    <div class="twenty5 pull-left">
                       Server
                     </div>
-                    <div class="fifty pull-left">
+                    <div class="forty pull-left">
                       : MetaTrader5
                     </div>
                   </div>
                   <div class="f-row">
-                    <div class="thirty pull-left">
+                    <div class="twenty5 pull-left">
                       Balance
                     </div>
-                    <div class="fifty pull-left">
+                    <div class="forty pull-left">
                       : 1,250.75
                     </div>
-                    <div class="twenty">
-                      <button class="btn btn-primary btn-sm btnsmall">+</button>
+                    <div class="thirty">
+                      <button class="btn btn-primary btn-sm btnsmall"><i class="fa fa-refresh"></i></button>
                     </div>
                   </div>
 
                   <div class="f-row"><br /></div>
 
                   <span>Trading Untuk Meta Trader 5</span>
-                  <div class="f-row">
+                  <div class="f-row apps">
                     <div class="thirty">
                       <small>WEB</small>
                       <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
@@ -116,7 +116,72 @@
               </div>
             </b-tab>
             <b-tab title="REAL">
-              <b-card-text>For Real Account</b-card-text>
+              <div class="container">
+                <div class="row">
+                  <div class="f-row">
+                    <div class="twenty5 pull-left">
+                      User ID
+                    </div>
+                    <div class="forty pull-left click-to-copy">
+                      <span class="click-to-copy-text" :value="link1">: 123456789</span>
+                    </div>
+                    <div class="thirty">
+                      <button class="btn btn-primary btn-sm btnsmall">Copy</button>
+                      <button class="btn btn-primary btn-sm btnsmall">Add</button>
+                    </div>
+                  </div>
+                  <div class="f-row">
+                    <div class="twenty5 pull-left">
+                      Password
+                    </div>
+                    <div class="forty pull-left click-to-copy">
+                      <span class="click-to-copy-text" :value="link2">: 123456789</span>
+                    </div>
+                    <div class="thirty">
+                      <button class="btn btn-primary btn-sm btnsmall">Copy</button>
+                      <button class="btn btn-primary btn-sm btnsmall">Edit</button>
+                    </div>
+                  </div>
+                  <div class="f-row">
+                    <div class="twenty5 pull-left">
+                      Server
+                    </div>
+                    <div class="forty pull-left">
+                      : MetaTrader5
+                    </div>
+                  </div>
+                  <div class="f-row">
+                    <div class="twenty5 pull-left">
+                      Balance
+                    </div>
+                    <div class="forty pull-left">
+                      : 1,250.75
+                    </div>
+                    <div class="thirty">
+                      <button class="btn btn-primary btn-sm btnsmall">DEPO</button>
+                      <button class="btn btn-primary btn-sm btnsmall">WD</button>
+                    </div>
+                  </div>
+
+                  <div class="f-row"><br /></div>
+
+                  <span>Trading Untuk Meta Trader 5</span>
+                  <div class="f-row apps">
+                    <div class="thirty">
+                      <small>WEB</small>
+                      <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
+                    </div>
+                    <div class="thirty">
+                      <small>ANDROID</small>
+                      <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
+                    </div>
+                    <div class="thirty">
+                      <small>IOS</small>
+                      <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </b-tab>
           </b-tabs>
         </b-card>
@@ -197,14 +262,17 @@ small {
 }
 .btnsmall{
   border-radius: 5px;
-  width: 50px;
+  width: 45px;
   padding: 0px;
 }
 .pull-left{text-align: left;}
 .f-row{width: 100%;}
 .fifty{width:50% !important;}
+.forty{width:40% !important;float:left;}
 .thirty{width:30% !important;float:left;}
+.twenty5{width:25% !important;float:left;}
 .twenty{width:20% !important;float:left;}
+.apps .thirty{width:33% !important;float:left;}
 
 .hello{
   text-align: center;
