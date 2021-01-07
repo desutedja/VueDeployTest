@@ -60,7 +60,6 @@
                     </div>
                     <div class="thirty5">
                       <button class="btn btn-primary btn-sm btnsmall">Copy</button>
-                      <button class="btn btn-primary btn-sm btnsmall">Add</button>
                     </div>
                   </div>
                   <div class="f-row">
@@ -71,7 +70,6 @@
                       <span class="click-to-copy-text" :value="link2">: 123456789</span>
                     </div>
                     <div class="thirty5">
-                      <button class="btn btn-primary btn-sm btnsmall">Copy</button>
                       <button class="btn btn-primary btn-sm btnsmall">Edit</button>
                     </div>
                   </div>
