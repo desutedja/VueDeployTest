@@ -176,7 +176,7 @@
                     <div class="thirty">
                       <small>IOS</small>
                       <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
-                    </div>padding: 3px;
+                    </div>
                   </div>
                 </div>
               </div>
