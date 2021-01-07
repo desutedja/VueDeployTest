@@ -58,7 +58,7 @@
                     <div class="forty pull-left click-to-copy">
                       <span class="click-to-copy-text" :value="link1">: 123456789</span>
                     </div>
-                    <div class="thirty">
+                    <div class="thirty5">
                       <button class="btn btn-primary btn-sm btnsmall">Copy</button>
                       <button class="btn btn-primary btn-sm btnsmall">Add</button>
                     </div>
@@ -70,7 +70,7 @@
                     <div class="forty pull-left click-to-copy">
                       <span class="click-to-copy-text" :value="link2">: 123456789</span>
                     </div>
-                    <div class="thirty">
+                    <div class="thirty5">
                       <button class="btn btn-primary btn-sm btnsmall">Copy</button>
                       <button class="btn btn-primary btn-sm btnsmall">Edit</button>
                     </div>
@@ -90,7 +90,7 @@
                     <div class="forty pull-left">
                       : 1,250.75
                     </div>
-                    <div class="thirty">
+                    <div class="thirty5">
                       <button class="btn btn-primary btn-sm btnsmall"><i class="fa fa-refresh"></i></button>
                     </div>
                   </div>
@@ -125,7 +125,7 @@
                     <div class="forty pull-left click-to-copy">
                       <span class="click-to-copy-text" :value="link1">: 123456789</span>
                     </div>
-                    <div class="thirty">
+                    <div class="thirty5">
                       <button class="btn btn-primary btn-sm btnsmall">Copy</button>
                       <button class="btn btn-primary btn-sm btnsmall">Add</button>
                     </div>
@@ -137,7 +137,7 @@
                     <div class="forty pull-left click-to-copy">
                       <span class="click-to-copy-text" :value="link2">: 123456789</span>
                     </div>
-                    <div class="thirty">
+                    <div class="thirty5">
                       <button class="btn btn-primary btn-sm btnsmall">Copy</button>
                       <button class="btn btn-primary btn-sm btnsmall">Edit</button>
                     </div>
@@ -157,7 +157,7 @@
                     <div class="forty pull-left">
                       : 1,250.75
                     </div>
-                    <div class="thirty">
+                    <div class="thirty5">
                       <button class="btn btn-primary btn-sm btnsmall">DEPO</button>
                       <button class="btn btn-primary btn-sm btnsmall">WD</button>
                     </div>
@@ -264,11 +264,13 @@ small {
   border-radius: 5px;
   width: 45px;
   padding: 0px;
+  font-size: small !important;
 }
 .pull-left{text-align: left;}
 .f-row{width: 100%;}
 .fifty{width:50% !important;}
 .forty{width:40% !important;float:left;}
+.thirty5{width:35% !important;float:left;}
 .thirty{width:30% !important;float:left;}
 .twenty5{width:25% !important;float:left;}
 .twenty{width:20% !important;float:left;}
