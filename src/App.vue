@@ -73,7 +73,7 @@
       <marquee><p style="font-family: Impact; font-size: 18pt">Running Text! Teks Berjalan! Running Text! Teks Berjalan! Running Text! Teks Berjalan!</p></marquee>
       <!--img src="./assets/logo.png" alt="Vue.js PWA"-->
       <router-view></router-view>
-      <footer class="text-center" style="background: gray;position: relative;z-index: -1;">
+      <footer class="text-center" style="background: gray;position: relative;">
         <div class="footer-above">
           <div class="container">
             <div class="row">
@@ -188,10 +188,13 @@ nav {
     width:60%;
 }
 
+.logo > img {
+  max-width: 45px;
+}
+
 .nav-links {
     display: flex;
     justify-content: space-around;
-    width: 30%;
 }
 
 .nav-links li {
@@ -220,7 +223,7 @@ nav {
 
 @media screen and (max-width: 1024px) {
     .nav-links {
-        width: 40%;
+        width: 60%;
     }
 }
 
@@ -239,7 +242,7 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 50%;
+        width: 40%;
         transform: translateX(-100%);
         transition: transform 0.5s ease-in;
     }
@@ -251,6 +254,17 @@ nav {
     .burger {
         display: block;
         cursor: pointer;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .promo{
+    width:100%;
+  }
+
+  .nav-links {
+        width: 40%;
     }
 }
 
