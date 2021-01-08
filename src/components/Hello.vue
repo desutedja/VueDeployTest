@@ -181,6 +181,15 @@
                 </div>
               </div>
             </b-tab>
+            <b-tab title="APPLY" class="tabs">
+              <div class="container">
+                <div class="row">
+                  <div class="center-screen">
+                    <a href="#" class="btn-grad">Apply</a>
+                  </div>
+                </div>
+              </div>
+            </b-tab>
           </b-tabs>
         </b-card>
       </div>
@@ -213,6 +222,16 @@ export default {
 small {
    display: block;
    text-align: center;
+}
+
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100px;
+  margin: 0 auto;
 }
 
 .tabs > .container > .row > .f-row {
@@ -309,6 +328,30 @@ li {
 a {
   color: #35495E;
 }
+
+/* btn Apply */
+
+.btn-grad {background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%)}
+
+.btn-grad {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

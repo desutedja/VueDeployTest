@@ -23,7 +23,7 @@
               </ul>
           </div>
       </nav-->
-      <b-navbar toggleable="lg" type="dark" variant="info">
+      <!--b-navbar toggleable="lg" type="dark" variant="info">
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
@@ -35,24 +35,45 @@
         <div class="mx-auto order-0">
             <b-navbar-brand href="#" class="mx-auto order-0" >Logo</b-navbar-brand>
         </div>
-        <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
+        <-- Right aligned nav items -->
+        <!--b-navbar-nav class="ml-auto">
             <b-nav-item-dropdown right>
-              <!-- Using 'button-content' slot -->
-              <template #button-content>
+              <-- Using 'button-content' slot -->
+              <!--template #button-content>
                 <em>User</em>
               </template>
               <b-dropdown-item href="#">Profile</b-dropdown-item>
               <b-dropdown-item href="#">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
           </b-navbar-nav>
-      </b-navbar>
+      </b-navbar-->
+      <nav style="z-index: 31;">
+          <ul class="nav-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Menu 1</a></li>
+              <li><a href="#">Menu 2</a></li>
+              <li><a href="#">Menu 3</a></li>
+              <li><a href="#">Menu 4</a></li>
+              <li><a href="#">Menu 5</a></li>
+              <li><a href="#">Menu 6</a></li>
+              <li><a href="#">Menu 7</a></li>
+              <li><a href="#">Menu 8</a></li>
+          </ul>
+          <div class="burger" @click='navSlide'>
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+          </div>
+          <div class="logo">
+              <img src="./assets/icon_forex.png" width="15%" alt="Vue.js PWA" />
+          </div>
+      </nav>
     </div>
-    <main>
+    <main style="z-index: 30;position: relative;">
       <marquee><p style="font-family: Impact; font-size: 18pt">Running Text! Teks Berjalan! Running Text! Teks Berjalan! Running Text! Teks Berjalan!</p></marquee>
       <!--img src="./assets/logo.png" alt="Vue.js PWA"-->
       <router-view></router-view>
-      <footer class="text-center" style="background: gray;">
+      <footer class="text-center" style="background: gray;position: relative;z-index: -1;">
         <div class="footer-above">
           <div class="container">
             <div class="row">
@@ -115,12 +136,150 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  methods: {
+    navSlide () {
+      const burger = document.querySelector('.burger')
+      const nav = document.querySelector('.nav-links')
+      const navLinks = document.querySelectorAll('.nav-links li')
+
+      burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active')
+
+        navLinks.forEach((link, index) => {
+          if (link.style.animation) {
+            link.style.animation = ''
+          } else {
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`
+          }
+        })
+
+        burger.classList.toggle('toggle')
+      })
+    }
+  },
+  beforeMount () {
+    this.navSlide()
+  }
 }
 </script>
 
 <style>
 @import './assets/css/font-awesome.min.css';
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #5D4954;
+    font-family: "Poppins", sans-serif;
+}
+
+.logo {
+    text-align: center;
+    color: rgb(226, 226, 226);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    width:60%;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-links {
+        position: fixed;
+        z-index: 100;
+        left: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #5D4954;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.nav-active {
+        transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
 
 .footer-above {
   position: fixed;
@@ -209,7 +368,7 @@ body {
 
 main {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 75px;
 }
 
 header {
