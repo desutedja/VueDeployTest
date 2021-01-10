@@ -48,6 +48,12 @@
           </b-navbar-nav>
       </b-navbar-->
       <nav style="z-index: 31;">
+        <div class="burger" @click='navSlide'>
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+          </div>
+
           <ul class="nav-links">
               <li><a href="#">Home</a></li>
               <li><a href="#">Menu 1</a></li>
@@ -59,11 +65,7 @@
               <li><a href="#">Menu 7</a></li>
               <li><a href="#">Menu 8</a></li>
           </ul>
-          <div class="burger" @click='navSlide'>
-              <div class="line1"></div>
-              <div class="line2"></div>
-              <div class="line3"></div>
-          </div>
+
           <div class="logo">
               <img src="./assets/icon_forex.png" width="15%" alt="Vue.js PWA" />
           </div>
@@ -143,23 +145,18 @@ export default {
       const nav = document.querySelector('.nav-links')
       const navLinks = document.querySelectorAll('.nav-links li')
 
-      burger.addEventListener('click', () => {
-        nav.classList.toggle('nav-active')
+      nav.classList.toggle('nav-active')
 
-        navLinks.forEach((link, index) => {
-          if (link.style.animation) {
-            link.style.animation = ''
-          } else {
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`
-          }
-        })
-
-        burger.classList.toggle('toggle')
+      navLinks.forEach((link, index) => {
+        if (link.style.animation) {
+          link.style.animation = ''
+        } else {
+          link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`
+        }
       })
+
+      burger.classList.toggle('toggle')
     }
-  },
-  beforeMount () {
-    this.navSlide()
   }
 }
 </script>
@@ -264,7 +261,7 @@ nav {
   }
 
   .nav-links {
-        width: 40%;
+        width: 30%;
     }
 }
 

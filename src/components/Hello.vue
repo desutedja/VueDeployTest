@@ -56,7 +56,7 @@
                       User ID
                     </div>
                     <div class="forty pull-left click-to-copy">
-                      <span class="click-to-copy-text" :value="link1">: 123456789</span>
+                      <span class="click-to-copy-text">: 123456789</span>
                     </div>
                     <div class="thirty5">
                       <button class="btn btn-primary btn-sm btnsmall">Copy</button>
@@ -67,7 +67,7 @@
                       Password
                     </div>
                     <div class="forty pull-left click-to-copy">
-                      <span class="click-to-copy-text" :value="link2">: 123456789</span>
+                      <span class="click-to-copy-text">: 123456789</span>
                     </div>
                     <div class="thirty5">
                       <button class="btn btn-primary btn-sm btnsmall">Edit</button>
@@ -121,7 +121,7 @@
                       User ID
                     </div>
                     <div class="forty pull-left click-to-copy">
-                      <span class="click-to-copy-text" :value="link1">: 123456789</span>
+                      <span class="click-to-copy-text">: 123456789</span>
                     </div>
                     <div class="thirty5">
                       <button class="btn btn-primary btn-sm btnsmall">Copy</button>
@@ -133,7 +133,7 @@
                       Password
                     </div>
                     <div class="forty pull-left click-to-copy">
-                      <span class="click-to-copy-text" :value="link2">: 123456789</span>
+                      <span class="click-to-copy-text">: 123456789</span>
                     </div>
                     <div class="thirty5">
                       <button class="btn btn-primary btn-sm btnsmall">Copy</button>
