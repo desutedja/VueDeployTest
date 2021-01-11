@@ -75,7 +75,7 @@
       <marquee><p style="font-family: Impact; font-size: 18pt">Running Text! Teks Berjalan! Running Text! Teks Berjalan! Running Text! Teks Berjalan!</p></marquee>
       <!--img src="./assets/logo.png" alt="Vue.js PWA"-->
       <router-view></router-view>
-      <footer class="text-center" style="background: gray;position: relative;">
+      <footer class="footer text-center" style="background: gray;position: relative;">
         <div class="footer-above">
           <div class="container">
             <div class="row">
@@ -163,6 +163,9 @@ export default {
 
 <style>
 @import './assets/css/font-awesome.min.css';
+.footer {
+  margin-top:85px;
+}
 
 nav {
     position: fixed;

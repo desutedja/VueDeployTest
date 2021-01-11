@@ -10,6 +10,11 @@ export default new Router({
       path: '/',
       name: 'Hello',
       component: Hello
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: () => import('../pages/firstStep.vue')
     }
   ]
 })

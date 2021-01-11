@@ -185,7 +185,7 @@
               <div class="container">
                 <div class="row">
                   <div class="center-screen">
-                    <a href="#" class="btn-grad">Apply</a>
+                    <a href="/#/register" class="btn-grad">Apply</a>
                   </div>
                 </div>
               </div>
