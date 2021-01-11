@@ -261,8 +261,17 @@ nav {
   }
 
   .nav-links {
-        width: 30%;
-    }
+    width: 50%;
+  }
+
+  .burger {
+    float: left;
+    padding: 10px;
+  }
+
+  .logo {
+    width: 100%;
+  }
 }
 
 .nav-active {
