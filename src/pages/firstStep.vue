@@ -1,12 +1,12 @@
 <template>
   <div>
     <div>
-      <b-form @submit="onSubmit" @reset="onReset" v-if="show" style="padding: 0 30px;">
+      <b-form v-if="show" style="padding: 0 30px;">
         <b-form-group id="lblAccountType" class="formlabel" label="Pilih Tipe Akun:" label-for="AccountType">
           <b-form-select
             id="AccountType"
-            v-model="form.AccountType"
-            :options="AccountType"
+            v-model="AccountType"
+            :options="AccountTypeList"
             required
           ></b-form-select>
         </b-form-group>
@@ -14,8 +14,8 @@
         <b-form-group id="lblCurrency" class="formlabel" label="Sumber Dana Anda:" label-for="Curency">
           <b-form-select
             id="Currency"
-            v-model="form.Currency"
-            :options="Currency"
+            v-model="Currency"
+            :options="CurrencyList"
             required
           ></b-form-select>
         </b-form-group>
@@ -24,14 +24,14 @@
           <b-form-input
             type="number"
             id="Deposit"
-            v-model="form.Deposit"
+            v-model="Deposit"
             placeholder=""
             required
           ></b-form-input>
         </b-form-group>
 
         <b-form-group id="lblBirthday" class="formlabel" label="Tanggal Lahir:" label-for="Birthday">
-          <Datepicker></Datepicker>
+          <Datepicker name="Birthday" id="Birthday" v-model="Birthday"></Datepicker>
         </b-form-group>
         <!--b-form-group
           id="input-group-1"
@@ -50,7 +50,7 @@
 
         <b-form-group id="input-group-4" class="formlabel" v-slot="{ ariaDescribedby }" label="Apakah Anda Sudah Memiliki Akun Sebelumnya?" label-for="IsAccount">
           <b-form-checkbox-group
-            v-model="form.checked"
+            v-model="checked"
             id="IsAccount"
             class="formlabel"
             :aria-describedby="ariaDescribedby"
@@ -63,7 +63,7 @@
         <b-form-group id="lblPassword" class="formlabel" label="Password Akun Live" label-for="Password" description="Password Khusus Untuk Mengakses Akun Live">
           <b-form-input
             id="Password"
-            v-model="form.Password"
+            v-model="Password"
             type="password"
             placeholder="Masukan Password"
             required
@@ -73,7 +73,7 @@
         <b-form-group id="lblPassword2" class="formlabel" label="Tulis Ulang Password Akun Live" label-for="Password2">
           <b-form-input
             id="Password2"
-            v-model="form.Password2"
+            v-model="Password2"
             type="password"
             placeholder="Masukan Ulang Password Anda"
             required
@@ -86,54 +86,85 @@
       </b-card-->
     </div>
     <div>
-      <b-button type="button" variant="primary">Lanjut</b-button>
+      <navigation></navigation>
     </div>
   </div>
 </template>
 
 <script>
+  import Navigation from '../components/Navigation.vue'
   import Datepicker from 'vuejs-datepicker'
 
   export default {
+    name: 'firstStep',
     data () {
       return {
-        form: {
-          AccountType: null,
-          Currency: null,
-          Deposit: '',
-          Password: '',
-          Password2: '',
-          checked: []
-        },
-        AccountType: [{ text: 'Pilih Tipe Akun', value: null }, 'Standart', 'Pro', 'Raw Spread'],
-        Currency: [{text: 'Pilih Sumber Dana Anda', value: null}, 'IDR', 'USD', 'Raw Spread'],
+        AccountTypeList: [{ text: 'Pilih Akun', value: null }, 'Standart', 'Lain-lain'],
+        CurrencyList: [{ text: 'Pilih Sumber Dana', value: null }, 'IDR', 'USD'],
         show: true
       }
     },
-    methods: {
-      onSubmit (event) {
-        event.preventDefault()
-        alert(JSON.stringify(this.form))
-      },
-      onReset (event) {
-        event.preventDefault()
-        // Reset our form values
-        this.form.AccountType = null
-        this.form.Currency = null
-        this.form.Deposit = ''
-        this.form.Password = ''
-        this.form.Password2 = ''
-        this.form.checked = []
-
-        // Trick to reset/clear native browser form validation state
-        this.show = false
-        this.$nextTick(() => {
-          this.show = true
-        })
-      }
-    },
     components: {
-      Datepicker
+      Datepicker,
+      Navigation
+    },
+    computed: {
+      AccountType: {
+        get () {
+          return this.$store.state.AccountType
+        },
+        set (value) {
+          this.$store.commit('setAccountType', {AccountType: value})
+        }
+      },
+      Currency: {
+        get () {
+          return this.$store.state.Currency
+        },
+        set (value) {
+          this.$store.commit('setCurrency', {Currency: value})
+        }
+      },
+      Deposit: {
+        get () {
+          return this.$store.state.Deposit
+        },
+        set (value) {
+          this.$store.commit('setDeposit', {Deposit: value})
+        }
+      },
+      Birthday: {
+        get () {
+          return this.$store.state.Birthday
+        },
+        set (value) {
+          this.$store.commit('setBirthday', {Birthday: value})
+        }
+      },
+      Password: {
+        get () {
+          return this.$store.state.Password
+        },
+        set (value) {
+          this.$store.commit('setPassword', {Password: value})
+        }
+      },
+      Password2: {
+        get () {
+          return this.$store.state.Password2
+        },
+        set (value) {
+          this.$store.commit('setPassword2', {Password2: value})
+        }
+      },
+      checked: {
+        get () {
+          return this.$store.state.checked
+        },
+        set (value) {
+          this.$store.commit('setchecked', {checked: value})
+        }
+      }
     }
   }
 </script>
