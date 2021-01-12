@@ -71,6 +71,7 @@
   import Navigation from '../components/Navigation.vue'
 
   export default {
+    name: 'secondStep',
     data () {
       return {
         BankNameList: [{ text: 'Pilih Bank', value: null }, 'BCA', 'BRI', 'Mandiri', 'BNI'],

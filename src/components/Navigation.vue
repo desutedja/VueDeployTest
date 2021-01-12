@@ -13,8 +13,14 @@
 <script>
 export default {
   methods: {
+    currentStep () {
+      if (this.$route.name === 'firstStep') return 1
+      if (this.$route.name === 'secondStep') return 2
+      if (this.$route.name === 'thirdStep') return 3
+      if (this.$route.name === 'fourthStep') return 4
+    },
     nextButtonText () {
-      if (this.$route.name === 'secondStep') {
+      if (this.$route.name === 'fourthStep') {
         return 'Kirim'
       }
 
@@ -24,16 +30,22 @@ export default {
       return this.$route.name === 'firstStep'
     },
     navigateNext () {
-      // if (this.$router.name === 'secondStep') {
-      //   submit()
-      // }
+      var curentSteps = this.currentStep()
 
-      this.$router.push('/register/2')
+      if (this.$route.name === 'fourthStep') {
+        this.submit()
+      } else {
+        this.$router.push('/register/' + (++curentSteps))
+      }
     },
     navigatePrevious () {
-      if (this.$route.name === 'secondStep') {
-        this.$router.push('/register/1')
-      }
+      var curentSteps = this.currentStep()
+
+      // if (this.$route.name === 'secondStep') {
+      //   this.$router.push('/register/1')
+      // }
+
+      this.$router.push('/register/' + (--curentSteps))
     },
     submit () {
       alert('selesai')
