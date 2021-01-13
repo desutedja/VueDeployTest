@@ -14,26 +14,28 @@
 export default {
   methods: {
     currentStep () {
-      if (this.$route.name === 'firstStep') return 1
-      if (this.$route.name === 'secondStep') return 2
-      if (this.$route.name === 'thirdStep') return 3
-      if (this.$route.name === 'fourthStep') return 4
-      if (this.$route.name === 'fifthStep') return 5
+      if (this.$route.name === 'personal1') return 1
+      if (this.$route.name === 'personal2') return 2
+      if (this.$route.name === 'personal3') return 3
+      if (this.$route.name === 'job') return 4
+      if (this.$route.name === 'asset') return 5
+      if (this.$route.name === 'emergency') return 6
+      if (this.$route.name === 'bank') return 7
     },
     nextButtonText () {
-      if (this.$route.name === 'fifthStep') {
+      if (this.$route.name === 'bank') {
         return 'Kirim'
       }
 
       return 'Lanjut'
     },
     isFirst () {
-      return this.$route.name === 'firstStep'
+      return this.$route.name === 'personal1'
     },
     navigateNext () {
       var curentSteps = this.currentStep()
 
-      if (this.$route.name === 'fifthStep') {
+      if (this.$route.name === 'bank') {
         this.submit()
       } else {
         this.$router.push('/register/' + (++curentSteps))

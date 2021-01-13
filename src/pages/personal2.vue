@@ -86,7 +86,7 @@
             type="text"
             id="FaxNo"
             v-model="FaxNo"
-            placeholder="masukan nomor fak rumah anda"
+            placeholder="masukan nomor faksimili rumah anda"
             required
           ></b-form-input>
         </b-form-group>
@@ -97,6 +97,16 @@
             id="SmartPhoneNo"
             v-model="SmartPhoneNo"
             placeholder="masukan No. Handphone anda"
+            required
+          ></b-form-input>
+        </b-form-group>
+
+        <b-form-group id="lblTaxNo" class="formlabel" label="Nomor NPWP" label-for="TaxNo">
+          <b-form-input
+            type="text"
+            id="TaxNo"
+            v-model="TaxNo"
+            placeholder="masukan nomor NPWP anda"
             required
           ></b-form-input>
         </b-form-group>
@@ -238,6 +248,10 @@
       SmartPhoneNo: {
         get () { return this.$store.state.SmartPhoneNo },
         set (value) { this.$store.commit('setSmartPhoneNo', {SmartPhoneNo: value}) }
+      },
+      TaxNo: {
+        get () { return this.$store.state.TaxNo },
+        set (value) { this.$store.commit('setTaxNo', {TaxNo: value}) }
       },
       Home: {
         get () { return this.$store.state.Home },
