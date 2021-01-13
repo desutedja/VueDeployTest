@@ -43,10 +43,27 @@
             required
           ></b-form-select>
         </b-form-group>
+
+        <b-form-group id="lblMotherName" class="formlabel" label="Nama Ibu Kandung" label-for="MotherName">
+          <b-form-input
+            id="MotherName"
+            v-model="MotherName"
+            type="text"
+            placeholder="Masukan Nama Ibu Kandung Anda"
+            required
+          ></b-form-input>
+        </b-form-group>
+
+        <b-form-group id="lblStatus" class="formlabel" label="Status Perkawinan" label-for="Status">
+          <b-form-select
+            id="Status"
+            v-model="Status"
+            :options="StatusList"
+            required
+          ></b-form-select>
+        </b-form-group>
+
       </b-form>
-      <!--b-card class="mt-3" header="Form Data Result">
-        <pre class="m-0">{{ form }}</pre>
-      </b-card-->
     </div>
     <div>
       <navigation></navigation>
@@ -64,6 +81,7 @@
       return {
         TypeOfIdentityList: [{ text: 'Pilih Jenis Identitas', value: null }, 'KTP', 'SIM', 'PASPOR'],
         SexList: [{ text: 'Pilih -', value: null }, 'Pria', 'Wanita'],
+        StatusList: [{ text: 'Pilih Satu', value: null }, 'Belum Menikah', 'Menikah', 'Cerai'],
         show: true
       }
     },
@@ -110,6 +128,22 @@
         },
         set (value) {
           this.$store.commit('setSex', {Sex: value})
+        }
+      },
+      MotherName: {
+        get () {
+          return this.$store.state.MotherName
+        },
+        set (value) {
+          this.$store.commit('setMotherName', {MotherName: value})
+        }
+      },
+      Status: {
+        get () {
+          return this.$store.state.Status
+        },
+        set (value) {
+          this.$store.commit('setStatus', {Status: value})
         }
       }
     }

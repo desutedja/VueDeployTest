@@ -21,18 +21,18 @@
         </b-form-group>
 
         <b-form-group label="Pengalaman Investasi" v-slot="{ ariaDescribedby }">
-          <b-form-radio v-model="experience" :aria-describedby="ariaDescribedby" name="some-radios" value="Yes">Ya</b-form-radio>
-          <b-form-radio v-model="experience" :aria-describedby="ariaDescribedby" name="some-radios" value="No">Tidak</b-form-radio>
+          <b-form-radio v-model="InvestmentExperience" :aria-describedby="ariaDescribedby" name="InvestmentExperience" value="Yes">Ya</b-form-radio>
+          <b-form-radio v-model="InvestmentExperience" :aria-describedby="ariaDescribedby" name="InvestmentExperience" value="No">Tidak</b-form-radio>
         </b-form-group>
 
         <b-form-group label="Apakah Anda memiliki anggota keluarga yang bekerja di BAPPEBTI/Bursa Berjangka/Kliring Berjangka?" v-slot="{ ariaDescribedby }">
-          <b-form-radio v-model="terms1" :aria-describedby="ariaDescribedby" name="some-radios" value="Yes">Ya</b-form-radio>
-          <b-form-radio v-model="terms1" :aria-describedby="ariaDescribedby" name="some-radios" value="No">Tidak</b-form-radio>
+          <b-form-radio v-model="terms1" :aria-describedby="ariaDescribedby" name="terms1" value="Yes">Ya</b-form-radio>
+          <b-form-radio v-model="terms1" :aria-describedby="ariaDescribedby" name="terms1" value="No">Tidak</b-form-radio>
         </b-form-group>
 
         <b-form-group label="Apakah Anda telah dinyatakan Pailit oleh Pengadilan?" v-slot="{ ariaDescribedby }">
-          <b-form-radio v-model="terms2" :aria-describedby="ariaDescribedby" name="some-radios" value="Yes">Ya</b-form-radio>
-          <b-form-radio v-model="terms2" :aria-describedby="ariaDescribedby" name="some-radios" value="No">Tidak</b-form-radio>
+          <b-form-radio v-model="terms2" :aria-describedby="ariaDescribedby" name="terms2" value="Yes">Ya</b-form-radio>
+          <b-form-radio v-model="terms2" :aria-describedby="ariaDescribedby" name="terms2" value="No">Tidak</b-form-radio>
         </b-form-group>
       </b-form>
     </div>
@@ -66,9 +66,9 @@
         get () { return this.$store.state.Funds },
         set (value) { this.$store.commit('setFunds', {Funds: value}) }
       },
-      experience: {
-        get () { return this.$store.state.experience },
-        set (value) { this.$store.commit('setexperience', {experience: value}) }
+      InvestmentExperience: {
+        get () { return this.$store.state.InvestmentExperience },
+        set (value) { this.$store.commit('setInvestmentExperience', {InvestmentExperience: value}) }
       },
       terms1: {
         get () { return this.$store.state.terms1 },
