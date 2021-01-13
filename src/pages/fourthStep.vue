@@ -32,8 +32,9 @@
           ></b-form-select>
         </b-form-group>
 
-        <b-form-group id="lblDistrict" class="formlabel" label="Kabupaten Domisili" label-for="District">
+        <b-form-group id="lblDistrict" class="formlabel" label="Kota/Kabupaten Domisili" label-for="District">
           <b-form-select
+            @change="onChangeDistrict"
             id="District"
             v-model="District"
             :options="DistrictList"
@@ -43,6 +44,7 @@
 
         <b-form-group id="lblSubDistrict" class="formlabel" label="Kecamatan Domisili" label-for="SubDistrict">
           <b-form-select
+            @change="onChangeSubDistrict"
             id="SubDistrict"
             v-model="SubDistrict"
             :options="SubDistrictList"
@@ -107,7 +109,6 @@
             required
           ></b-form-select>
         </b-form-group>
-
       </b-form>
     </div>
     <div>
@@ -118,23 +119,29 @@
 
 <script>
   import Navigation from '../components/Navigation.vue'
-  import Datepicker from 'vuejs-datepicker'
   import axios from 'axios'
 
   export default {
     name: 'fourthStep',
     data () {
       return {
-        // TypeOfIdentityList: [{ text: 'Pilih Jenis Identitas', value: null }, 'KTP', 'SIM', 'PASPOR'],
-        // SexList: [{ text: 'Pilih -', value: null }, 'Pria', 'Wanita'],
         CountryList: [{ text: 'Pilih Negara Domisili', value: null }, 'Indonesia'],
         ProvinceList: [{ text: 'Pilih Provinsi Domisili', value: 0 }],
-        DistrictList: [{ text: 'Pilih Kota Domisili', value: 0 }],
-        SubDistrictList: [],
-        VillageList: [],
-        HomeList: [],
+        DistrictList: [{ text: 'Pilih Kota/Kabupaten Domisili', value: 0 }],
+        SubDistrictList: [{ text: 'Pilih Kecamatan Domisili', value: 0 }],
+        VillageList: [{ text: 'Pilih Kelurahan Domisili', value: 0 }],
+        HomeList: [{ text: 'Pilih Salah Satu', value: null }, 'Pribadi', 'Keluarga', 'Sewa', 'Lainnya'],
         show: true
       }
+    },
+    mounted: function () {
+      // method1 will execute at pageload
+      // TODO : List lebih baik disimpan di store jika sudah pernah di load, jadi tidak perlu load ulang dari API
+      // jadi bisa menghemat waktu load dan bandwidth
+      if (this.Country !== null) { this.onChangeCountry() }
+      if (this.Country !== null) { this.onChangeProvince() }
+      if (this.Country !== null) { this.onChangeDistrict() }
+      if (this.Country !== null) { this.onChangeSubDistrict() }
     },
     methods: {
       onChangeCountry: function (event) {
@@ -154,8 +161,34 @@
         axios.get('https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=' + this.Province)
           .then(response => {
             this.DistrictList = response.data.kota_kabupaten.map(kotakabupaten => ({value: kotakabupaten.id, text: kotakabupaten.nama}))
-            this.DistrictList.push({text: 'Pilih Kota Domisili', value: 0})
+            this.DistrictList.push({text: 'Pilih Kota/Kabupaten Domisili', value: 0})
             this.DistrictList.sort((a, b) => (a.value > b.value) ? 1 : -1)
+          })
+          .catch(error => {
+            this.errorMessage = error.message
+            console.error('There was an error!', error)
+          })
+      },
+      onChangeDistrict: function (event) {
+        console.log(this.District)
+        axios.get('https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=' + this.District)
+          .then(response => {
+            this.SubDistrictList = response.data.kecamatan.map(kecamatan => ({value: kecamatan.id, text: kecamatan.nama}))
+            this.SubDistrictList.push({text: 'Pilih Kecamatan Domisili', value: 0})
+            this.SubDistrictList.sort((a, b) => (a.value > b.value) ? 1 : -1)
+          })
+          .catch(error => {
+            this.errorMessage = error.message
+            console.error('There was an error!', error)
+          })
+      },
+      onChangeSubDistrict: function (event) {
+        console.log(this.SubDistrict)
+        axios.get('https://dev.farizdotid.com/api/daerahindonesia/kelurahan?id_kecamatan=' + this.SubDistrict)
+          .then(response => {
+            this.VillageList = response.data.kelurahan.map(kelurahan => ({value: kelurahan.id, text: kelurahan.nama}))
+            this.VillageList.push({text: 'Pilih kelurahan Domisili', value: 0})
+            this.VillageList.sort((a, b) => (a.value > b.value) ? 1 : -1)
           })
           .catch(error => {
             this.errorMessage = error.message
@@ -164,7 +197,6 @@
       }
     },
     components: {
-      Datepicker,
       Navigation
     },
     computed: {

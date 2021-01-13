@@ -27,7 +27,19 @@ export default new Vuex.Store(
       Address: '',
       Country: null,
       Province: 0,
-      District: 0
+      District: 0,
+      SubDistrict: 0,
+      Village: 0,
+      PostalCode: '',
+      PhoneNo: '',
+      FaxNo: '',
+      SmartPhoneNo: '',
+      Home: null,
+      Purpose: null,
+      Funds: null,
+      experience: '',
+      terms1: '',
+      terms2: ''
     },
     mutations: {
       setAccountType (state, payload) { state.AccountType = payload.AccountType },
@@ -58,7 +70,12 @@ export default new Vuex.Store(
       setPhoneNo (state, payload) { state.PhoneNo = payload.PhoneNo },
       setFaxNo (state, payload) { state.FaxNo = payload.FaxNo },
       setSmartPhoneNo (state, payload) { state.SmartPhoneNo = payload.SmartPhoneNo },
-      setHome (state, payload) { state.Home = payload.Home }
+      setHome (state, payload) { state.Home = payload.Home },
+      setPurpose (state, payload) { state.Purpose = payload.Purpose },
+      setFunds (state, payload) { state.Funds = payload.Funds },
+      setexperience (state, payload) { state.experience = payload.experience },
+      setterms1 (state, payload) { state.terms1 = payload.terms1 },
+      setterms2 (state, payload) { state.terms2 = payload.terms2 }
     }
   }
 )

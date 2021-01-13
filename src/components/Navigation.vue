@@ -18,9 +18,10 @@ export default {
       if (this.$route.name === 'secondStep') return 2
       if (this.$route.name === 'thirdStep') return 3
       if (this.$route.name === 'fourthStep') return 4
+      if (this.$route.name === 'fifthStep') return 5
     },
     nextButtonText () {
-      if (this.$route.name === 'fourthStep') {
+      if (this.$route.name === 'fifthStep') {
         return 'Kirim'
       }
 
@@ -32,7 +33,7 @@ export default {
     navigateNext () {
       var curentSteps = this.currentStep()
 
-      if (this.$route.name === 'fourthStep') {
+      if (this.$route.name === 'fifthStep') {
         this.submit()
       } else {
         this.$router.push('/register/' + (++curentSteps))
