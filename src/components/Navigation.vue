@@ -21,9 +21,10 @@ export default {
       if (this.$route.name === 'asset') return 5
       if (this.$route.name === 'emergency') return 6
       if (this.$route.name === 'bank') return 7
+      if (this.$route.name === 'document') return 8
     },
     nextButtonText () {
-      if (this.$route.name === 'bank') {
+      if (this.$route.name === 'document') {
         return 'Kirim'
       }
 
@@ -35,7 +36,7 @@ export default {
     navigateNext () {
       var curentSteps = this.currentStep()
 
-      if (this.$route.name === 'bank') {
+      if (this.$route.name === 'document') {
         this.submit()
       } else {
         this.$router.push('/register/' + (++curentSteps))
