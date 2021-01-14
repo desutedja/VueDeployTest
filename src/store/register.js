@@ -72,6 +72,11 @@ export default new Vuex.Store(
       SavingType: null,
 
       // Document
+      SelfieWithID: null,
+      PhotoID: null,
+      OtherDocument: null,
+      imgSelfieWithID: require('@/assets/upload images.jpeg'),
+
       // Aggreement
       AccountType: null,
       Currency: null,
@@ -146,6 +151,12 @@ export default new Vuex.Store(
       setAccountNo (state, payload) { state.AccountNo = payload.AccountNo },
       setPhoneNumber (state, payload) { state.PhoneNumber = payload.PhoneNumber },
       setSavingType (state, payload) { state.SavingType = payload.SavingType },
+
+      // Document
+      setSelfieWithID (state, payload) { state.SelfieWithID = payload.SelfieWithID },
+      setPhotoID (state, payload) { state.PhotoID = payload.PhotoID },
+      setOtherDocument (state, payload) { state.OtherDocument = payload.OtherDocument },
+      setimgSelfieWithID (state, payload) { state.imgSelfieWithID = payload.imgSelfieWithID },
 
       // other
       setAccountType (state, payload) { state.AccountType = payload.AccountType },
