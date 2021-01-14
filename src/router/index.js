@@ -8,6 +8,7 @@ import job from '@/pages/job'
 import asset from '@/pages/asset'
 import emergency from '@/pages/emergency'
 import bank from '@/pages/bank'
+import document from '@/pages/document'
 
 Vue.use(Router)
 
@@ -20,6 +21,7 @@ export default new Router({
     {path: '/register/4', name: 'job', component: job},
     {path: '/register/5', name: 'asset', component: asset},
     {path: '/register/6', name: 'emergency', component: emergency},
-    {path: '/register/7', name: 'bank', component: bank}
+    {path: '/register/7', name: 'bank', component: bank},
+    {path: '/register/8', name: 'document', component: document}
   ]
 })
