@@ -23,6 +23,7 @@
             </div>
           </div>
         </b-form-group>
+        <div class="clearfix"></div>
 
         <b-form-group id="lblPhotoID" class="formlabel" label="Foto Diri Memegang Identitas" label-for="PhotoID">
           <b-form-file
@@ -44,6 +45,7 @@
             </div>
           </div>
         </b-form-group>
+        <div class="clearfix"></div>
 
         <b-form-group id="lblOtherDocument" class="formlabel" label="Foto Diri Memegang Identitas" label-for="OtherDocument">
           <b-form-file
@@ -65,9 +67,10 @@
             </div>
           </div>
         </b-form-group>
-
       </b-form>
     </div>
+    <div class="clearfix"></div>
+
     <div>
       <navigation></navigation>
     </div>
@@ -90,13 +93,29 @@
     components: {
       Navigation
     },
+    mounted: function () {
+      // method1 will execute at pageload
+      // TODO : cari cara lebih simplenya
+      if (this.SelfieWithID !== null) { this.fileChange('SelfieWithID') }
+      if (this.PhotoID !== null) { this.fileChange('PhotoID') }
+      if (this.OtherDocument !== null) { this.fileChange('OtherDocument') }
+    },
     methods: {
+      fileChange (i) {
+        if (i === 'SelfieWithID') {
+          this.imgSelfieWithID = URL.createObjectURL(this.SelfieWithID)
+        } else if (i === 'PhotoID') {
+          this.imgPhotoID = URL.createObjectURL(this.PhotoID)
+        } else if (i === 'OtherDocument') {
+          this.imgOtherDocument = URL.createObjectURL(this.OtherDocument)
+        }
+      },
       onFileChange (e) {
-        console.log('test')
         const file = e.target.files[0]
 
         if (e.target.attributes.id.value === 'SelfieWithID') {
           this.imgSelfieWithID = URL.createObjectURL(file)
+          console.log(file)
         } else if (e.target.attributes.id.value === 'PhotoID') {
           this.imgPhotoID = URL.createObjectURL(file)
         } else if (e.target.attributes.id.value === 'OtherDocument') {
@@ -140,12 +159,22 @@
   width: 50%;
 }
 
+.clearfix{
+  margin-bottom: 50px;
+}
+
 .imgContainer{
   text-align: center;
   text-align: -moz-center;
   text-align: -webkit-center;
   width: 100%;
 }
+
+.formlabel{
+  position:relative;
+  z-index: 0;
+}
+
 @media only screen and (max-width: 600px) {
   .formlabel{
     text-align:left;
