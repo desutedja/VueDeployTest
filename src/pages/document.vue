@@ -181,15 +181,15 @@
   }
 
   .imgColumn{
-  width:180px;
-  height: 180px;
+  width:160px;
+  height: 160px;
   padding: 10px;
   float:left;
 }
 
 .imgColumn > img {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
 }
 
 .imgRow{

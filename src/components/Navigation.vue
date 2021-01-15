@@ -22,9 +22,10 @@ export default {
       if (this.$route.name === 'emergency') return 6
       if (this.$route.name === 'bank') return 7
       if (this.$route.name === 'document') return 8
+      if (this.$route.name === 'agreement') return 9
     },
     nextButtonText () {
-      if (this.$route.name === 'document') {
+      if (this.$route.name === 'agreement') {
         return 'Kirim'
       }
 
@@ -36,7 +37,7 @@ export default {
     navigateNext () {
       var curentSteps = this.currentStep()
 
-      if (this.$route.name === 'document') {
+      if (this.$route.name === 'agreement') {
         this.submit()
       } else {
         this.$router.push('/register/' + (++curentSteps))

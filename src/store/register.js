@@ -78,6 +78,9 @@ export default new Vuex.Store(
       imgSelfieWithID: require('@/assets/upload images.jpeg'),
 
       // Aggreement
+      AgreementProfile: 'Yes',
+
+      // other
       AccountType: null,
       Currency: null,
       Deposit: '',
@@ -157,6 +160,9 @@ export default new Vuex.Store(
       setPhotoID (state, payload) { state.PhotoID = payload.PhotoID },
       setOtherDocument (state, payload) { state.OtherDocument = payload.OtherDocument },
       setimgSelfieWithID (state, payload) { state.imgSelfieWithID = payload.imgSelfieWithID },
+
+      // Agreement
+      setAgreementProfile (state, payload) { state.AgreementProfile = payload.AgreementProfile },
 
       // other
       setAccountType (state, payload) { state.AccountType = payload.AccountType },
