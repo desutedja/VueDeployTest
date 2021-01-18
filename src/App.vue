@@ -55,7 +55,7 @@
           </div>
 
           <ul class="nav-links">
-              <li><a href="#">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href="#">Menu 1</a></li>
               <li><a href="#">Menu 2</a></li>
               <li><a href="#">Menu 3</a></li>
@@ -67,7 +67,7 @@
           </ul>
 
           <div class="logo">
-              <img src="./assets/icon_forex.png" width="15%" alt="Vue.js PWA" />
+              <a href="/"><img src="./assets/icon_forex.png" width="15%" alt="Vue.js PWA" /></a>
           </div>
       </nav>
     </div>
