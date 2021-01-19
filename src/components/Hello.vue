@@ -52,7 +52,7 @@
               <div class="container">
                 <div class="row">
                   <div class="f-row">
-                    <div class="twenty5 pull-left">
+                    <div class="lbl twenty5 pull-left">
                       User ID
                     </div>
                     <div class="forty pull-left click-to-copy">
@@ -63,7 +63,7 @@
                     </div>
                   </div>
                   <div class="f-row">
-                    <div class="twenty5 pull-left">
+                    <div class="lbl twenty5 pull-left">
                       Password
                     </div>
                     <div class="forty pull-left click-to-copy">
@@ -74,7 +74,7 @@
                     </div>
                   </div>
                   <div class="f-row">
-                    <div class="twenty5 pull-left">
+                    <div class="lbl twenty5 pull-left">
                       Server
                     </div>
                     <div class="forty pull-left">
@@ -82,7 +82,7 @@
                     </div>
                   </div>
                   <div class="f-row">
-                    <div class="twenty5 pull-left">
+                    <div class="lbl twenty5 pull-left">
                       Balance
                     </div>
                     <div class="forty pull-left">
@@ -95,19 +95,24 @@
 
                   <div class="f-row"><br /></div>
 
-                  <span>Trading Untuk Meta Trader 5</span>
-                  <div class="f-row apps">
-                    <div class="thirty">
-                      <small>WEB</small>
-                      <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
+                  <div class="appl">
+                    <div class="lblRow">
+                      <span>Trading Untuk Meta Trader 5</span>
                     </div>
-                    <div class="thirty">
-                      <small>ANDROID</small>
-                      <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
-                    </div>
-                    <div class="thirty">
-                      <small>IOS</small>
-                      <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
+
+                    <div class="f-row apps">
+                      <div class="thirty">
+                        <small>WEB</small>
+                        <button class="btn btn-secondary btn-md btn-radius"><i class="fa fa-globe"></i> TRADE</button>
+                      </div>
+                      <div class="thirty">
+                        <small>ANDROID</small>
+                        <button class="btn btn-secondary btn-md btn-radius"><i class="fa fa-android"></i> TRADE</button>
+                      </div>
+                      <div class="thirty">
+                        <small>IOS</small>
+                        <button class="btn btn-secondary btn-md btn-radius"><i class="fa fa-apple"></i> TRADE</button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -117,7 +122,7 @@
               <div class="container">
                 <div class="row">
                   <div class="f-row">
-                    <div class="twenty5 pull-left">
+                    <div class="lbl twenty5 pull-left">
                       User ID
                     </div>
                     <div class="forty pull-left click-to-copy">
@@ -129,7 +134,7 @@
                     </div>
                   </div>
                   <div class="f-row">
-                    <div class="twenty5 pull-left">
+                    <div class="lbl twenty5 pull-left">
                       Password
                     </div>
                     <div class="forty pull-left click-to-copy">
@@ -141,7 +146,7 @@
                     </div>
                   </div>
                   <div class="f-row">
-                    <div class="twenty5 pull-left">
+                    <div class="lbl twenty5 pull-left">
                       Server
                     </div>
                     <div class="forty pull-left">
@@ -149,7 +154,7 @@
                     </div>
                   </div>
                   <div class="f-row">
-                    <div class="twenty5 pull-left">
+                    <div class="lbl twenty5 pull-left">
                       Balance
                     </div>
                     <div class="forty pull-left">
@@ -163,19 +168,23 @@
 
                   <div class="f-row"><br /></div>
 
-                  <span>Trading Untuk Meta Trader 5</span>
-                  <div class="f-row apps">
-                    <div class="thirty">
-                      <small>WEB</small>
-                      <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
+                  <div class="appl">
+                    <div class="lblRow">
+                      <span>Trading Untuk Meta Trader 5</span>
                     </div>
-                    <div class="thirty">
-                      <small>ANDROID</small>
-                      <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
-                    </div>
-                    <div class="thirty">
-                      <small>IOS</small>
-                      <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
+                    <div class="f-row apps">
+                      <div class="thirty">
+                        <small>WEB</small>
+                        <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
+                      </div>
+                      <div class="thirty">
+                        <small>ANDROID</small>
+                        <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
+                      </div>
+                      <div class="thirty">
+                        <small>IOS</small>
+                        <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -219,6 +228,38 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+.tabs > .card-header {
+  background-image: url("../assets/texture2.png");
+}
+
+.apps > .thirty > button {
+  font-size: 12px;
+  font-weight: bold;
+  font-family: tahoma;
+  min-height: 36px;
+  border-radius: 8px;
+  color: #ffb527;
+  background-color: #2f1c08;
+}
+.appl{
+  width: 100%;
+  min-height: 100px;
+}
+
+.lblRow{
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.lbl {
+  font-weight: bold;
+}
+
+.tabs > .card-header > ul > li.nav-item {
+  margin: 0 !important;
+}
+
 small {
    display: block;
    text-align: center;
