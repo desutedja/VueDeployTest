@@ -50,7 +50,15 @@
           <b-tabs card>
             <b-tab title="DEMO" class="tabs" active>
               <div class="container">
-                <div class="row">
+                <div class="row rowtab">
+                  <div class="f-row">
+                    <div class="lbl twenty5 pull-left">
+                      Server
+                    </div>
+                    <div class="forty pull-left">
+                      : MetaTrader5
+                    </div>
+                  </div>
                   <div class="f-row">
                     <div class="lbl twenty5 pull-left">
                       User ID
@@ -75,14 +83,6 @@
                   </div>
                   <div class="f-row">
                     <div class="lbl twenty5 pull-left">
-                      Server
-                    </div>
-                    <div class="forty pull-left">
-                      : MetaTrader5
-                    </div>
-                  </div>
-                  <div class="f-row">
-                    <div class="lbl twenty5 pull-left">
                       Balance
                     </div>
                     <div class="forty pull-left">
@@ -93,7 +93,7 @@
                     </div>
                   </div>
 
-                  <div class="f-row"><br /></div>
+                  <div class="f-row"><hr /></div>
 
                   <div class="appl">
                     <div class="lblRow">
@@ -120,7 +120,15 @@
             </b-tab>
             <b-tab title="REAL" class="tabs">
               <div class="container">
-                <div class="row">
+                <div class="row rowtab">
+                  <div class="f-row">
+                    <div class="lbl twenty5 pull-left">
+                      Server
+                    </div>
+                    <div class="forty pull-left">
+                      : MetaTrader5
+                    </div>
+                  </div>
                   <div class="f-row">
                     <div class="lbl twenty5 pull-left">
                       User ID
@@ -147,14 +155,6 @@
                   </div>
                   <div class="f-row">
                     <div class="lbl twenty5 pull-left">
-                      Server
-                    </div>
-                    <div class="forty pull-left">
-                      : MetaTrader5
-                    </div>
-                  </div>
-                  <div class="f-row">
-                    <div class="lbl twenty5 pull-left">
                       Balance
                     </div>
                     <div class="forty pull-left">
@@ -166,33 +166,35 @@
                     </div>
                   </div>
 
-                  <div class="f-row"><br /></div>
+                  <div class="f-row"><hr /></div>
 
                   <div class="appl">
                     <div class="lblRow">
                       <span>Trading Untuk Meta Trader 5</span>
                     </div>
+
                     <div class="f-row apps">
                       <div class="thirty">
                         <small>WEB</small>
-                        <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
+                        <button class="btn btn-secondary btn-md btn-radius"><i class="fa fa-globe"></i> TRADE</button>
                       </div>
                       <div class="thirty">
                         <small>ANDROID</small>
-                        <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
+                        <button class="btn btn-secondary btn-md btn-radius"><i class="fa fa-android"></i> TRADE</button>
                       </div>
                       <div class="thirty">
                         <small>IOS</small>
-                        <button class="btn btn-secondary btn-md btn-radius">TRADE</button>
+                        <button class="btn btn-secondary btn-md btn-radius"><i class="fa fa-apple"></i> TRADE</button>
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>
             </b-tab>
             <b-tab title="APPLY" class="tabs">
               <div class="container">
-                <div class="row">
+                <div class="row rowtab">
                   <div class="center-screen">
                     <a href="/#/register/1" class="btn-grad">Apply</a>
                   </div>
@@ -228,8 +230,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+hr {
+  background-image: linear-gradient(to right, rgb(255, 127, 14, 0.57), rgba(255, 255, 255, 0.75), rgba(255, 127, 14, 0.57));
+  height: 1.3px;
+  width: 90%;
+}
 .tabs > .card-header {
-  background-image: url("../assets/texture2.png");
+  background-image: linear-gradient(355deg, rgb(172, 156, 16) 0%, rgb(253, 232, 78) 50%, rgb(215, 198, 10) 100%);
 }
 
 .apps > .thirty > button {
@@ -256,8 +263,15 @@ export default {
   font-weight: bold;
 }
 
+.nav-tabs .nav-link.active {
+  background-color: #ffc124;
+}
+
 .tabs > .card-header > ul > li.nav-item {
   margin: 0 !important;
+  background-image: linear-gradient(135deg, rgb(255, 211, 78) 0%, rgb(227, 185, 58) 100%);
+  font-weight: bold;
+  border-right: 1px solid wheat;
 }
 
 small {
@@ -277,6 +291,10 @@ small {
 
 .tabs > .container > .row > .f-row {
   padding: 3px;
+}
+
+.rowtab{
+  min-height: 310px;
 }
 
 .click-to-copy .Label {
@@ -322,14 +340,24 @@ small {
   border-radius: 25px;
   width: 85%;
 }
+
 .btnsmall{
   border-radius: 5px;
   width: 50px;
   padding: 0px;
   font-size: small !important;
+  background-color: #f4b846bd;
+  border: 0;
+  color: white;
 }
+
+.btnsmall:hover{
+  background-color: #c68407bd;
+  font-weight: bold;
+}
+
 .pull-left{text-align: left;}
-.f-row{width: 100%;}
+.f-row{width: 100%;margin:5px 0;}
 .fifty{width:50% !important;}
 .forty{width:40% !important;float:left;}
 .thirty5{width:35% !important;float:left;}
@@ -350,6 +378,7 @@ small {
 
 .promo .card{
   margin: 10px 0 100px;
+  border-bottom: 1px solid #bb4600;
 }
 
 h1, h2 {
