@@ -49,26 +49,30 @@
       </b-navbar-->
       <nav style="z-index: 31;">
         <div class="burger" @click='navSlide'>
-              <div class="line1"></div>
-              <div class="line2"></div>
-              <div class="line3"></div>
-          </div>
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
 
+        <div class="navb">
           <ul class="nav-links">
-              <li><a href="/">Home</a></li>
-              <li><a href="#">Menu 1</a></li>
-              <li><a href="#">Menu 2</a></li>
-              <li><a href="#">Menu 3</a></li>
-              <li><a href="#">Menu 4</a></li>
-              <li><a href="#">Menu 5</a></li>
-              <li><a href="#">Menu 6</a></li>
-              <li><a href="#">Menu 7</a></li>
-              <li><a href="#">Menu 8</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Menu 1</a></li>
+            <li><a href="#">Menu 2</a></li>
+            <li><a href="#">Menu 3</a></li>
+            <li><a href="#">Menu 4</a></li>
+            <li><a href="#">Menu 5</a></li>
+            <li><a href="#">Menu 6</a></li>
+            <li><a href="#">Menu 7</a></li>
+            <li><a href="#">Menu 8</a></li>
           </ul>
+        </div>
 
-          <div class="logo">
-              <a href="/"><img src="./assets/icon_forex.png" width="15%" alt="Vue.js PWA" /></a>
-          </div>
+        <div class="navb logo">
+            <a href="/"><img src="./assets/icon_forex.png" width="15%" style="max-width:65px" alt="Vue.js PWA" /></a>
+        </div>
+
+        <div class="navb"></div>
       </nav>
     </div>
     <main style="z-index: 30;position: relative;">
@@ -165,6 +169,10 @@ export default {
 @import './assets/css/font-awesome.min.css';
 .footer {
   margin-top:85px;
+}
+
+.navb{
+  width: 30%;
 }
 
 nav {
