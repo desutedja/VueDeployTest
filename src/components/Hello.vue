@@ -346,7 +346,7 @@ small {
   width: 50px;
   padding: 0px;
   font-size: small !important;
-  background-color: #f4b846bd;
+  background-color: #f4b846bd !important;
   border: 0;
   color: white;
 }

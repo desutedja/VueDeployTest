@@ -281,7 +281,7 @@ nav {
   }
 
   .logo {
-    width: 100%;
+    width: 30%;
   }
 }
 
