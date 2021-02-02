@@ -63,7 +63,6 @@
             <li><a href="#">Menu 4</a></li>
             <li><a href="#">Menu 5</a></li>
             <li><a href="#">Menu 6</a></li>
-            <li><a href="#">Menu 7</a></li>
           </ul>
         </div>
 
