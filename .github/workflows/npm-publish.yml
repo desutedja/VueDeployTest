@@ -8,15 +8,7 @@ on:
     branches: [master]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-18.04
     steps:
-      - uses: appleboy/ssh-action@v0.1.3
-        name: Deploy to Digital Ocean droplet via SSH action
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          passphrase: ${{ secrets.SSH_KEYPASSWORD }}
-          envs: IMAGE_NAME,REGISTRY,GITHUB_SHA,COMMAND
-          script: ../deploy.sh
+      - run: pwd
