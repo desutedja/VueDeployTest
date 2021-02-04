@@ -17,9 +17,9 @@ jobs:
       - uses: appleboy/ssh-action@v0.1.3
         name: Deploy to Digital Ocean droplet via SSH action
         with:
-          HOST: ${{ secrets.SSH_HOST }}
-          USERNAME: ${{ secrets.SSH_USERNAME }}
-          KEY: ${{ secrets.SSH_KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
             echo "pulling image"
             docker pull desutedja/docker-container
