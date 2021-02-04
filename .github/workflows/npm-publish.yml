@@ -17,6 +17,7 @@ jobs:
           HOST: ${{ secrets.SSH_HOST }}
           USERNAME: ${{ secrets.SSH_USERNAME }}
           KEY: ${{ secrets.SSH_KEY }}
+          PORT: ${{ secrets.SSH_PORT }}
           envs: IMAGE_NAME,REGISTRY,GITHUB_SHA,COMMAND
           script: |
             echo "pulling image"
