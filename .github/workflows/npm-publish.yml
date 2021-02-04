@@ -19,4 +19,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_KEYPASSWORD }}
           envs: IMAGE_NAME,REGISTRY,GITHUB_SHA,COMMAND
-          script: ./deploy.sh
+          script: ../deploy.sh
