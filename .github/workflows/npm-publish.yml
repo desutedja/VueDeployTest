@@ -18,18 +18,6 @@ jobs:
         name: Deploy to Digital Ocean droplet via SSH action
         with:
           host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          script: |
-            echo "pulling image"
-            docker pull desutedja/docker-container
-            echo "stopping image"
-
-            IMAGE_NAME="img"
-
-            if docker image ls -a "$IMAGE_NAME" | grep -Fq "$IMAGE_NAME" 1>/dev/null; then
-            echo "stopping image"
-            docker stop img
-            fi
-
-            docker run --name img --rm -p 3000:80 desutedja/docker-container
+          username: ${{ secrets.SSH_USERNAME }          
+          script: ls
