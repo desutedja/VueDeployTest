@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2  
         
-      - uses: appleboy/ssh-action@master
-        name: Deploy to Digital Ocean droplet via SSH action
+      - name: Deploy to Digital Ocean droplet via SSH action
+        uses: appleboy/ssh-action@v0.1.3        
         with:
-          host: ${{ secrets.SSH_HOST }}
-          key: ${{ secrets.SSH_KEY }}
-          username: ${{ secrets.SSH_USERNAME }}         
+          host: ${{ secrets.SSH_HOST }} #IP
+          key: ${{ secrets.SSH_KEY }} #PrivateKey
+          username: ${{ secrets.SSH_USERNAME }} #username 
           script: ls
