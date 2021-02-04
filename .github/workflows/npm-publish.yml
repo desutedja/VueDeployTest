@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2  
         
       - name: Deploy to Digital Ocean droplet via SSH action
-        uses: appleboy/ssh-action@v0.1.2
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }} #IP
           key: ${{ secrets.SSH_KEY }} #PrivateKey
