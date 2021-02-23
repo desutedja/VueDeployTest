@@ -1,7 +1,13 @@
 <template>
   <div>
     <div>
-      <VueTradingView />
+      <VueTradingView :options="{
+        symbol: 'XAUUSD',
+        theme: 'dark',
+        interval: '1H',
+        allow_symbol_change: true
+        }" 
+      />
     </div>
   </div>
 </template>
