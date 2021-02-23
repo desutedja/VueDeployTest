@@ -51,11 +51,10 @@ jobs:
           script: |
             echo "pulling image"
             docker pull desutedja/docker-container
-            echo "stopping image"
 
             IMAGE_NAME="img"
 
-            if docker image ls -a "$IMAGE_NAME" | grep -Fq "$IMAGE_NAME" 1>/dev/null; then
+            if docker image ls -a "$IMAGE_NAME" | docker container ls -f name=img | grep -Fq "$IMAGE_NAME" 1>/dev/null; then
             echo "stopping image"
             docker container stop img
             fi
