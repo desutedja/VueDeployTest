@@ -92,7 +92,7 @@
                   </li>
 
                   <li>
-                    <a href="#" title="Market" target="_blank" rel="nofollow">
+                    <a href="/#/market" title="Market" rel="nofollow">
                       <i class="fa fa-industry"></i>
                       <span>Market</span>
                     </a>

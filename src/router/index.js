@@ -10,6 +10,7 @@ import emergency from '@/pages/emergency'
 import bank from '@/pages/bank'
 import document from '@/pages/document'
 import agreement from '@/pages/agreement'
+import market from '@/pages/market'
 
 Vue.use(Router)
 
@@ -24,6 +25,7 @@ export default new Router({
     {path: '/register/6', name: 'emergency', component: emergency},
     {path: '/register/7', name: 'bank', component: bank},
     {path: '/register/8', name: 'document', component: document},
-    {path: '/register/9', name: 'agreement', component: agreement}
+    {path: '/register/9', name: 'agreement', component: agreement},
+    {path: '/market', name: 'market', component: market}
   ]
 })
