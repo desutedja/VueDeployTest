@@ -4,7 +4,7 @@
       <VueTradingView :options="{
         symbol: 'XAUUSD',
         theme: 'dark',
-        interval: '1H',
+        interval: '1',
         allow_symbol_change: true
         }" 
       />
