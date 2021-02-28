@@ -99,7 +99,7 @@
                   </li>
 
                   <li>
-                    <a href="#" title="Trade" target="_blank" rel="nofollow">
+                    <a href="/#/trade" title="Trade" target="_blank" rel="nofollow">
                       <i class="fa fa-plus"></i>
                       <span>Trade</span>
                     </a>
