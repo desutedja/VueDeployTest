@@ -2,7 +2,7 @@
     <div>
         <div>
             <trading-vue :data="chart" :width="this.width" :height="this.height"
-                :color-back="colors.colorBack"
+                :color-back="black"
                 :color-grid="colors.colorGrid"
                 :color-text="colors.colorText">
             </trading-vue>
@@ -92,8 +92,17 @@ export default {
 #btnOrder > btn{
     width: 45%;
 }
-.footer-above{
+footer{
     display:none !important;
+}
+#app > div:first-child {
+  display:none !important;
+}
+marquee{
+  display:none;
+}
+main{
+  margin-top:0px;
 }
 </style>
 
