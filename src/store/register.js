@@ -87,7 +87,10 @@ export default new Vuex.Store(
       Birthday: '',
       Password: '',
       Password2: '',
-      checked: []
+      checked: [],
+
+      // Bet
+      BetAmount: null
     },
     mutations: {
       // Personal 1
@@ -171,7 +174,10 @@ export default new Vuex.Store(
       setBirthday (state, payload) { state.Birthday = payload.Birthday },
       setPassword (state, payload) { state.Password = payload.Password },
       setPassword2 (state, payload) { state.Password2 = payload.Password2 },
-      setchecked (state, payload) { state.checked = payload.checked }
+      setchecked (state, payload) { state.checked = payload.checked },
+
+      // Bet
+      setBetAmount (state, payload) { state.BetAmount = payload.BetAmount }
     }
   }
 )
