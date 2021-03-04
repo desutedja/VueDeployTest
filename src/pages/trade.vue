@@ -15,8 +15,8 @@
                 <div class="text">
                   <input type="number" v-model="BetAmount" placeholder="1" required />
                 </div>
-                <button style="margin:3px 0;" @click="OrderBuy"><img src="../assets/images/btnBuy.png" /></button>
-                <button @click="OrderSell"><img src="../assets/images/btnSell.png" /></button>
+                <button style="margin:3px 0;" @click="OrderBuy"><img src="../assets/btnbuy.png" /></button>
+                <button @click="OrderSell"><img src="../assets/btnsell.png" /></button>
               </div>
             </div>
         </div>
