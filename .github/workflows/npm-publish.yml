@@ -59,4 +59,4 @@ jobs:
             docker container stop img
             fi
 
-            docker run --name img --rm -d -p 80:3000 desutedja/docker-container
+            docker run --net example --name img --rm -d -p 80:3000 desutedja/docker-container
