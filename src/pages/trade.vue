@@ -29,10 +29,10 @@ import Data from '../../data/data.json'
 import axios from 'axios'
 
 export default {
-  name: 'app',
+  name: 'trade',
   components: { TradingVue },
   methods: {
-    onResize (event) {
+    onResize () {
       this.width = window.innerWidth * 0.85
       this.height = window.innerHeight * 0.95
     },
@@ -45,7 +45,7 @@ export default {
         })
           .catch(error => {
             console.log(error)
-            this.errored = true
+            // this.errored = true
           })
           .finally(() => { this.loading = false })
       }, 3000)
@@ -55,12 +55,18 @@ export default {
       axios.post('http://127.0.0.1:5000/trade', json, {headers: {'Content-Type': 'application/json'}}).then(response => {
         console.log(response.data)
       })
+        .catch(error => {
+          console.log(error)
+        })
     },
     OrderSell () {
       const json = JSON.stringify({ side: 'sell', amount: this.BetAmount })
       axios.post('http://127.0.0.1:5000/trade', json, {headers: {'Content-Type': 'application/json'}}).then(response => {
         console.log(response.data)
       })
+        .catch(error => {
+          console.log(error)
+        })
     }
   },
   mounted () {
