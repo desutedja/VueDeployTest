@@ -20,6 +20,14 @@
               </div>
             </div>
         </div>
+        <b-modal id="modalInvoice" size="sm" :title="OrderTitle" v-model="show">
+          {{ OrderResponse }}
+          <div slot="modal-footer" class="w-30"> 
+              <b-btn size="sm" class="float-right" variant="warning" @click="show=false">
+                  <i class="fa fa-print"></i> Print
+              </b-btn>
+          </div>
+      </b-modal>
     </div>
 </template>
 
@@ -53,7 +61,15 @@ export default {
     OrderBuy () {
       const json = JSON.stringify({ side: 'buy', amount: this.BetAmount })
       axios.post('http://165.232.175.151:5000/trade', json, {headers: {'Content-Type': 'application/json'}}).then(response => {
-        console.log(response.data)
+        if (response.data.status) {
+          this.OrderTitle = 'Buy Order Success'
+          this.OrderResponse = 'Your Order ID is : ' + response.data.order_id
+        } else {
+          this.OrderTitle = 'Buy Order Failed'
+          this.OrderResponse = 'Failed'
+        }
+        console.log('status: ' + response.data.status)
+        this.show = true
       })
         .catch(error => {
           console.log(error)
@@ -62,7 +78,15 @@ export default {
     OrderSell () {
       const json = JSON.stringify({ side: 'sell', amount: this.BetAmount })
       axios.post('http://165.232.175.151:5000/trade', json, {headers: {'Content-Type': 'application/json'}}).then(response => {
-        console.log(response.data)
+        if (response.data.status) {
+          this.OrderTitle = 'Sell Order Success'
+          this.OrderResponse = 'Your Order ID is : ' + response.data.order_id
+        } else {
+          this.OrderTitle = 'Sell Order Failed'
+          this.OrderResponse = 'Failed'
+        }
+        console.log('status: ' + response.data.status)
+        this.show = true
       })
         .catch(error => {
           console.log(error)
@@ -80,6 +104,9 @@ export default {
   },
   data () {
     return {
+      show: false,
+      OrderTitle: '',
+      OrderResponse: '',
       chart: new DataCube(Data),
       width: window.innerWidth * 0.85,
       height: window.innerHeight * 0.95,
