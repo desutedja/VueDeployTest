@@ -38,7 +38,7 @@ export default {
     },
     pollGet () {
       setInterval(() => {
-        axios.get('http://127.0.0.1:5000/').then(response => {
+        axios.get('http://165.232.175.151:5000/').then(response => {
           console.log(response.data)
           this.chart = new DataCube(response.data)
           // this.info = response.data.bpi
@@ -52,7 +52,7 @@ export default {
     },
     OrderBuy () {
       const json = JSON.stringify({ side: 'buy', amount: this.BetAmount })
-      axios.post('http://127.0.0.1:5000/trade', json, {headers: {'Content-Type': 'application/json'}}).then(response => {
+      axios.post('http://165.232.175.151:5000/trade', json, {headers: {'Content-Type': 'application/json'}}).then(response => {
         console.log(response.data)
       })
         .catch(error => {
@@ -61,7 +61,7 @@ export default {
     },
     OrderSell () {
       const json = JSON.stringify({ side: 'sell', amount: this.BetAmount })
-      axios.post('http://127.0.0.1:5000/trade', json, {headers: {'Content-Type': 'application/json'}}).then(response => {
+      axios.post('http://165.232.175.151:5000/trade', json, {headers: {'Content-Type': 'application/json'}}).then(response => {
         console.log(response.data)
       })
         .catch(error => {
