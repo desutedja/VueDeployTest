@@ -12,6 +12,9 @@
             </div>
             <div class="rightPanel">
               <div style="position: absolute;bottom: 5%;right: 0;width: 14%;">
+                <b-btn id="portofolio" @click="openSidebar">
+                  Portofolio
+                </b-btn>
                 <div class="text">
                   <input type="number" v-model="BetAmount" placeholder="1" required />
                 </div>
@@ -19,6 +22,24 @@
                 <button @click="OrderSell"><img src="../assets/btnsell1.png" /></button>
               </div>
             </div>
+            
+            <b-sidebar v-model="isSidebarOpen" right>
+              <div v-for="dataPortofolios in dataPortofolio" :key="dataPortofolios.id">
+                <div class="positions">
+                  <div class="symbol">{{ dataPortofolios.symbol }}</div>
+                  <div class="ids">{{ dataPortofolios.id }}</div>
+                  <div>
+                    <div class="halfleft">{{ dataPortofolios.side }}</div>
+                    <div class="halfright">${{ dataPortofolios.amount }}</div>
+                  </div>
+                  <div>
+                    <div class="halfleft">{{ dataPortofolios.create_at }}</div>
+                    <div class="halfright1">at level {{ dataPortofolios.priceat }}</div>
+                  </div>
+                  <div class="closepos"><button @click="closePosition(dataPortofolios.id)">STOP</button></div>
+                </div>
+              </div>
+            </b-sidebar>
         </div>
         <b-modal id="modalInvoice" size="sm" :title="OrderTitle" v-model="show">
           {{ OrderResponse }}
@@ -40,9 +61,42 @@ export default {
   name: 'trade',
   components: { TradingVue },
   methods: {
+    openSidebar () {
+      this.isSidebarOpen = true
+    },
     onResize () {
       this.width = window.innerWidth * 0.85
       this.height = window.innerHeight * 0.95
+    },
+    getPortofolio () {
+      axios.get('http://127.0.0.1:5000/history').then(response => {
+        this.dataPortofolio = response.data.orders
+        console.log(this.dataPortofolio)
+      })
+        .catch(error => {
+          console.log(error)
+        })
+    },
+    closePosition (param) {
+      const json = JSON.stringify({ orderID: param })
+      axios.post('http://165.232.175.151:5000/trade/close', json, {headers: {'Content-Type': 'application/json'}}).then(response => {
+        // console.log(response.data)
+        if (response.data) {
+          this.getPortofolio()
+          this.isSidebarOpen = false
+
+          this.OrderTitle = 'Success'
+          this.OrderResponse = 'Close Order Success'
+        } else {
+          this.OrderTitle = 'Failed'
+          this.OrderResponse = 'Close Order  Failed'
+        }
+
+        this.show = true
+      })
+        .catch(error => {
+          console.log(error)
+        })
     },
     pollGet () {
       setInterval(() => {
@@ -98,12 +152,15 @@ export default {
   },
   created () {
     this.pollGet()
+    this.getPortofolio()
   },
   beforeDestroy () {
     window.removeEventListener('resize', this.onResize)
   },
   data () {
     return {
+      isSidebarOpen: false,
+      dataPortofolio: null,
       show: false,
       OrderTitle: '',
       OrderResponse: '',
@@ -131,6 +188,48 @@ export default {
 </script>
 
 <style>
+.b-sidebar-header > button{
+  color: white !important;
+}
+#portofolio{
+  width: 70px;
+  font-size: 11px;
+  margin: 5px;
+  background: orange;
+}
+
+.positions{
+  margin: 10px 0;
+  width: 100%;
+  padding: 5px;
+  background: #101219;
+}
+
+.halfleft{
+  width:49%;
+  float:left;
+}
+
+.halfright{
+  width:49%;
+  float:right;
+}
+
+.halfright1{
+  width:50%;
+  float:right;
+}
+
+.closepos{
+  width: 100%;
+  text-align: center;
+  overflow: auto;
+}
+
+.ids{
+  font-size:10px;
+}
+
 div.text{
 position:relative;
 }
