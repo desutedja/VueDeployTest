@@ -69,7 +69,7 @@ export default {
       this.height = window.innerHeight * 0.95
     },
     getPortofolio () {
-      axios.get('http://127.0.0.1:5000/history').then(response => {
+      axios.get('http://165.232.175.151:5000/history').then(response => {
         this.dataPortofolio = response.data.orders
         console.log(this.dataPortofolio)
       })
