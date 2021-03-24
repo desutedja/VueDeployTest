@@ -16,7 +16,7 @@
                   Portofolio
                 </b-btn>
                 <div class="text">
-                  <input type="number" v-model="BetAmount" placeholder="1" required />
+                  <input type="number" v-model="BetAmount" placeholder="$1" required />
                 </div>
                 <button style="margin:3px 0;" @click="OrderBuy"><img src="../assets/btnbuy1.png" /></button>
                 <button @click="OrderSell"><img src="../assets/btnsell1.png" /></button>
@@ -239,12 +239,12 @@ div.text input{
   padding: 4px 0px 8px 18px;
 }
 
-div.text:after{
+/* div.text:after{
 position: absolute;
     left: 30px;
     top: 6px;
     content: '$';
-}
+} */
 
 .rightPanel{
   position:relative;
@@ -270,9 +270,9 @@ main{
     width: 50px;
   }
 
-  div.text:after{
+  /* div.text:after{
     left: 20px;
-  }
+  } */
 }
 </style>
 
